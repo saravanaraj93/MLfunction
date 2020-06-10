@@ -1,0 +1,7 @@
+azure-functions
+pandas
+sklearn
+scipy
+joblib
+requests
+azure.storage.blob
