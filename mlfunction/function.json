@@ -1,0 +1,35 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    },
+    {
+      "type": "queue",
+      "direction": "out",
+      "name": "outputQueue",
+      "queueName": "outqueue",
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "type": "blob",
+      "direction": "in",
+      "dataType": "binary",
+      "name": "inputBlob",
+      "path": "pickle-input/model-log.pkl",
+      "connection": "AzureWebJobsStorage"
+    }
+  ]
+}
